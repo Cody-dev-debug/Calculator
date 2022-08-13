@@ -1,4 +1,4 @@
-# Simple Calculator Android Application
+# Calculator Android Application
 
 # Author
 Aditya Bansal
@@ -19,20 +19,28 @@ When the backspace button is long pressed, all the contents are cleared. Methods
 This icon represents the application. Made using Font Awesome Icons and MDBootstrap. It follows material design guidelines.
 
 # Android Specifications
-Android Studio Version: 3.1.4
-Gradle Version: 4.6
-Minimum Android SDK: 19
-Target Android SDK: 28
+* Android Studio Version: 3.1.4
+* Gradle Version: 4.6
+* Minimum Android SDK: 19
+* Target Android SDK: 28
 
 # Screenshots
-*In Portrait Mode-
+* In Portrait Mode-
+
 ![Main UI](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Portait.jpg)
-*In Landsacpe Mode-
+
+* In Landsacpe Mode-
+
 ![Main UI](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Landscape.jpg)
+
+* Calculation Example in Portrait Mode-
 
 ![Calculation being performed 1](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Calculation-1.jpg)
 ![Calculation being performed 2](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Calculation-2.jpg)
 
+* Calculation Example in Landsacpe Mode-
+
+![Calculation being performed ](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/sin.jpg)
 
 # Usage
 The usage of the application is self-explanatory. However, the following steps can be followed –
@@ -41,5 +49,6 @@ The usage of the application is self-explanatory. However, the following steps c
 3. Enter the second number (up to 10 digits)
 4. Press the ‘=’ button to perform the calculation
 5. Use the backspace button to delete the last character
-6. Enter the first number before entering an operation.
-7. Use ‘C’ button to clear all the fields
+6. Enter the first number before entering an binary operation.
+7. Use ‘C’ button to clear all the fields.
+8. Numbers entered before unary operations are multiplied with the operation.
