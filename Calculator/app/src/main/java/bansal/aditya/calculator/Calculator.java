@@ -1,6 +1,9 @@
 package bansal.aditya.calculator;
 
 
+import android.view.View;
+
+@SuppressWarnings("ALL")
 class Calculator {
 
     public double addition(double num1, double num2){
@@ -47,4 +50,5 @@ class Calculator {
     public double tan(double num1, double num2){
         return num1*Math.tan(num2);
     }
+
 }

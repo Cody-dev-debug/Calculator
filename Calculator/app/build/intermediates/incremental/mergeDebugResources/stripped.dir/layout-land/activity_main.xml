@@ -28,7 +28,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -38,7 +38,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -48,7 +48,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -58,7 +58,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_minus"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -68,7 +68,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_plus"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -78,7 +78,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_sin"
                 android:textAppearance="@style/operator_button_styles" />
         </TableRow>
@@ -93,7 +93,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -103,7 +103,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -113,7 +113,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -123,7 +123,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_mul"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -133,7 +133,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_root"
                 android:textAppearance="@style/operator_button_styles" />
             <Button
@@ -142,7 +142,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_cos"
                 android:textAppearance="@style/operator_button_styles" />
         </TableRow>
@@ -157,7 +157,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -167,7 +167,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -177,7 +177,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -187,7 +187,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_div"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -197,7 +197,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_pow"
                 android:textAppearance="@style/operator_button_styles" />
             <Button
@@ -206,7 +206,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_tan"
                 android:textAppearance="@style/operator_button_styles" />
         </TableRow>
@@ -221,7 +221,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_dot"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -231,7 +231,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onNumClick"
+                
                 android:text="@string/button_0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -253,7 +253,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_mod"
                 android:textAppearance="@style/operator_button_styles" />
             <Button
@@ -262,7 +262,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onOperatorClick"
+                
                 android:text="@string/button_factorial"
                 android:textAppearance="@style/operator_button_styles" />
 

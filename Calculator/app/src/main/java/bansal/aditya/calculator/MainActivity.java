@@ -1,12 +1,17 @@
 package bansal.aditya.calculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
+
 import bansal.aditya.calculator.databinding.ActivityMainBinding;
 
 
@@ -22,22 +27,18 @@ import bansal.aditya.calculator.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Testing";
-    private Calculator mCalculator; // object of Calculator class
-    private double number_one=1; // first number
-    private double number_two=1; // second number
-    private String operation_string; // current operation
     private static int MAX_CHARACTERS = 10;
     ActivityMainBinding binding;
-    private boolean flag=false;
-
-    private enum operator {
-        ADD, SUB, MUL, DIV, MOD, ROOT, POW, FACT,SIN,COS,TAN,NULL
-    }
+    private Calculator mCalculator; // object of Calculator class
+    private double number_one = 1; // first number
+    private double number_two = 1; // second number
+    private String operation_string; // current operation
+    private boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mCalculator = new Calculator();
         operation_string = operator.NULL.name();
@@ -53,11 +54,34 @@ public class MainActivity extends AppCompatActivity {
             number_one = savedInstanceState.getDouble("Number_one", 0);
             number_two = savedInstanceState.getDouble("Number_two", 0);
         }
+        binding.buttonOne.setOnClickListener(new NumClick());
+        binding.buttonTwo.setOnClickListener(new NumClick());
+        binding.buttonThree.setOnClickListener(new NumClick());
+        binding.buttonFour.setOnClickListener(new NumClick());
+        binding.buttonFive.setOnClickListener(new NumClick());
+        binding.buttonSix.setOnClickListener(new NumClick());
+        binding.buttonSeven.setOnClickListener(new NumClick());
+        binding.buttonEight.setOnClickListener(new NumClick());
+        binding.buttonNine.setOnClickListener(new NumClick());
+        binding.buttonDot.setOnClickListener(new NumClick());
+        binding.buttonZero.setOnClickListener(new NumClick());
+        binding.buttonPlus.setOnClickListener(new OperatorClick());
+        binding.buttonMinus.setOnClickListener(new OperatorClick());
+        binding.buttonDivide.setOnClickListener(new OperatorClick());
+        binding.buttonMultiply.setOnClickListener(new OperatorClick());
+        binding.buttonMod.setOnClickListener(new OperatorClick());
+        if (window.orientation==90 || ) {
+            binding.buttonFactorial.setOnClickListener(new OperatorClick());
+            binding.buttonSin.setOnClickListener(new OperatorClick());
+            binding.buttonCos.setOnClickListener(new OperatorClick());
+            binding.buttonTan.setOnClickListener(new OperatorClick());
+        }
+
     }
 
     //    implementation of Saved instance state
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("First_number", binding.inputValue1.getText().toString());
         outState.putString("Operation", binding.inputOperation.getText().toString());
@@ -97,118 +121,65 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //            handle operations for numbers
-    public void onNumClick(View view) {
-        if (!binding.textViewResult.getText().toString().equals("")) {
-            onClearClick(view);
-        }
-        switch (view.getId()) {
-            case R.id.button_one:
-                selectTextViewToAppend("1");
-                break;
-            case R.id.button_two:
-                selectTextViewToAppend("2");
-                break;
-            case R.id.button_three:
-                selectTextViewToAppend("3");
-                break;
-            case R.id.button_four:
-                selectTextViewToAppend("4");
-                break;
-            case R.id.button_five:
-                selectTextViewToAppend("5");
-                break;
-            case R.id.button_six:
-                selectTextViewToAppend("6");
-                break;
-            case R.id.button_seven:
-                selectTextViewToAppend("7");
-                break;
-            case R.id.button_eight:
-                selectTextViewToAppend("8");
-                break;
-            case R.id.button_nine:
-                selectTextViewToAppend("9");
-                break;
-            case R.id.button_zero:
-                selectTextViewToAppend("0");
-                break;
-            case R.id.button_dot:
-                if (operation_string.equals(operator.NULL.name())) {
-                    if (binding.inputValue1.getText().toString().contains(".")) {
-                        Toast.makeText(this, "Cannot have more than one decimal point in a number", Toast.LENGTH_LONG).show();
-                    } else {
-                        binding.inputValue1.append(".");
-                    }
-                } else {
-                    if (binding.inputValue2.getText().toString().contains(".")) {
-                        Toast.makeText(this, "Cannot have more than one decimal point in a number", Toast.LENGTH_LONG).show();
-                    } else {
-                        binding.inputValue2.append(".");
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
     //            handle operations for operators
-    public void onOperatorClick(View view) {
-//        Log.d(TAG, "V1 "+binding.inputValue1.getText().toString());
-//        Log.d(TAG, "V2 "+binding.inputValue2.getText().toString());
-//        Log.d(TAG, "O1 "+binding.inputOperation.getText().toString());
-//        Log.d(TAG, "O2 "+binding.inputOperation1.getText().toString());
-        if (!binding.textViewResult.getText().toString().equals("")) {
-            onClearClick(view);
-        }
-        if (!binding.inputValue1.getText().toString().equals("")) {
-            if(binding.inputOperation.getText().toString().equals("sin("))
-                binding.inputOperation1.setText("");
-            switch (view.getId()) {
-                case R.id.button_plus:
-                    operation_string = operator.ADD.name();
-                    binding.inputOperation.setText("+");
-                    flag = false;
-                    break;
-                case R.id.button_minus:
-                    operation_string = operator.SUB.name();
-                    binding.inputOperation.setText("-");
-                    flag = false;
-                    break;
-                case R.id.button_multiply:
-                    operation_string = operator.MUL.name();
-                    binding.inputOperation.setText("x");
-                    flag = false;
-                    break;
-                case R.id.button_divide:
-                    operation_string = operator.DIV.name();
-                    binding.inputOperation.setText("/");
-                    flag = false;
-                    break;
-                case R.id.button_mod:
-                    operation_string = operator.MOD.name();
-                    binding.inputOperation.setText("%");
-                    flag = false;
-                    break;
-                case R.id.button_pow:
-                    operation_string = operator.POW.name();
-                    binding.inputOperation.setText("^");
-                    flag = false;
-                    break;
-                case R.id.button_factorial:
-                    operation_string = operator.FACT.name();
-                    binding.inputOperation.setText("!");
-                    flag = true;
-                    break;
-                default:
-                    operation_string = operator.NULL.name();
-                    break;
+    public class OperatorClick extends MainActivity implements View.OnClickListener {
+
+        @Override
+        @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
+        public void onClick(View view) {
+            try {
+                if (!binding.textViewResult.getText().toString().equals("")) {
+                    onClearClick(view);
+                }
+            } catch (NullPointerException e) {
+                e.printStackTrace();
             }
-            return;
-        }
-        switch (view.getId())
-        {
+            if (!binding.inputValue1.getText().toString().equals("")) {
+                if (binding.inputOperation.getText().toString().equals("sin("))
+                    binding.inputOperation1.setText("");
+                switch (view.getId()) {
+                    case R.id.button_plus:
+                        operation_string = operator.ADD.name();
+                        binding.inputOperation.setText("+");
+                        flag = false;
+                        break;
+                    case R.id.button_minus:
+                        operation_string = operator.SUB.name();
+                        binding.inputOperation.setText("-");
+                        flag = false;
+                        break;
+                    case R.id.button_multiply:
+                        operation_string = operator.MUL.name();
+                        binding.inputOperation.setText("x");
+                        flag = false;
+                        break;
+                    case R.id.button_divide:
+                        operation_string = operator.DIV.name();
+                        binding.inputOperation.setText("/");
+                        flag = false;
+                        break;
+                    case R.id.button_mod:
+                        operation_string = operator.MOD.name();
+                        binding.inputOperation.setText("%");
+                        flag = false;
+                        break;
+                    case R.id.button_pow:
+                        operation_string = operator.POW.name();
+                        binding.inputOperation.setText("^");
+                        flag = false;
+                        break;
+                    case R.id.button_factorial:
+                        operation_string = operator.FACT.name();
+                        binding.inputOperation.setText("!");
+                        flag = true;
+                        break;
+                    default:
+                        operation_string = operator.NULL.name();
+                        break;
+                }
+                return;
+            }
+            switch (view.getId()) {
                 case R.id.button_root:
                     operation_string = operator.ROOT.name();
                     binding.inputOperation.setText("√(");
@@ -220,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                     operation_string = operator.SIN.name();
                     binding.inputOperation.setText("sin(");
                     binding.inputOperation1.setText(")");
-                    Log.d(TAG, "In SIN "+operation_string);
+                    Log.d(TAG, "In SIN " + operation_string);
                     flag = true;
                     break;
                 case R.id.button_cos:
@@ -238,19 +209,20 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     Toast.makeText(this, "Enter first number before a binary operation", Toast.LENGTH_LONG).show();
                     break;
+            }
         }
     }
 
     public void onEqualsClick(View view) {
-        number_one=1; // first number
-        number_two=1;
+        number_one = 1; // first number
+        number_two = 1;
 //        handle equals click
-        if ((binding.inputValue1.getText().toString().equals("") && flag==false) || binding.inputOperation.getText().toString().equals("") || (binding.inputValue2.getText().toString().equals("") && !binding.inputOperation.getText().toString().equals("!"))) {
+        if ((binding.inputValue1.getText().toString().equals("") && !flag) || binding.inputOperation.getText().toString().equals("") || (binding.inputValue2.getText().toString().equals("") && !binding.inputOperation.getText().toString().equals("!"))) {
             Toast.makeText(this, "Enter the numbers and the operation", Toast.LENGTH_LONG).show();
-        } else {;
-            if(!binding.inputValue1.getText().toString().equals(""))
+        } else {
+            if (!binding.inputValue1.getText().toString().equals(""))
                 number_one = Double.parseDouble(binding.inputValue1.getText().toString());
-            if(!binding.inputValue2.getText().toString().equals(""))
+            if (!binding.inputValue2.getText().toString().equals(""))
                 number_two = Double.parseDouble(binding.inputValue2.getText().toString());
             String operation;
             switch (operator.valueOf(operation_string)) {
@@ -281,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
                     operation = binding.inputValue1.getText().toString() + getString(R.string.button_mod) + binding.inputValue2.getText().toString();
                     break;
                 case ROOT:
-                    binding.textViewResult.setText(String.valueOf(mCalculator.squareRoot(number_one,number_two)));
+                    binding.textViewResult.setText(String.valueOf(mCalculator.squareRoot(number_one, number_two)));
                     operation = binding.inputValue1.getText().toString() + getString(R.string.button_root) + binding.inputValue2.getText().toString();
                     break;
                 case POW:
@@ -289,27 +261,26 @@ public class MainActivity extends AppCompatActivity {
                     operation = binding.inputValue1.getText().toString() + getString(R.string.button_pow) + binding.inputValue2.getText().toString();
                     break;
                 case FACT:
-                    if(number_one>19) {
+                    if (number_one > 19) {
                         Toast.makeText(this, "Number too large to calculate", Toast.LENGTH_SHORT).show();
                         return;
-                    }
-                    else {
+                    } else {
                         binding.textViewResult.setText(String.valueOf(mCalculator.factorial((int) number_one)));
                         operation = binding.inputValue1.getText().toString() + getString(R.string.button_plus) + binding.inputValue2.getText().toString();
                     }
                     break;
                 case SIN:
-                    Log.d(TAG, "In SIN "+number_one+number_two);
-                    binding.textViewResult.setText(String.valueOf(mCalculator.sin(number_one,number_two)));
-                    operation = binding.inputValue1.getText().toString() + getString(R.string.button_sin) + "("+binding.inputValue2.getText().toString()+binding.inputOperation1.getText().toString();
+                    Log.d(TAG, "In SIN " + number_one + number_two);
+                    binding.textViewResult.setText(String.valueOf(mCalculator.sin(number_one, number_two)));
+                    operation = binding.inputValue1.getText().toString() + getString(R.string.button_sin) + "(" + binding.inputValue2.getText().toString() + binding.inputOperation1.getText().toString();
                     break;
                 case COS:
-                    binding.textViewResult.setText(String.valueOf(mCalculator.cos(number_one,number_two)));
-                    operation = binding.inputValue1.getText().toString() + getString(R.string.button_cos) +"("+ binding.inputValue2.getText().toString()+binding.inputOperation1.getText().toString();
+                    binding.textViewResult.setText(String.valueOf(mCalculator.cos(number_one, number_two)));
+                    operation = binding.inputValue1.getText().toString() + getString(R.string.button_cos) + "(" + binding.inputValue2.getText().toString() + binding.inputOperation1.getText().toString();
                     break;
                 case TAN:
-                    binding.textViewResult.setText(String.valueOf(mCalculator.tan(number_one,number_two)));
-                    operation = binding.inputValue1.getText().toString() + getString(R.string.button_tan)+"(" + binding.inputValue2.getText().toString()+binding.inputOperation1.getText().toString();
+                    binding.textViewResult.setText(String.valueOf(mCalculator.tan(number_one, number_two)));
+                    operation = binding.inputValue1.getText().toString() + getString(R.string.button_tan) + "(" + binding.inputValue2.getText().toString() + binding.inputOperation1.getText().toString();
                     break;
                 case NULL:
                     binding.textViewResult.setText(getString(R.string.error));
@@ -324,6 +295,12 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, binding.completeOperation.getText().toString());
         }
     }
+    //            handle operations for numbers
+//
+//    public void onNumClick(View view) {
+//
+//        }
+//    }
 
     //    handle clear click
     public void onClearClick(View view) {
@@ -338,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
         binding.inputOperation.setText("");
         binding.inputValue2.setText("");
         binding.inputOperation1.setText("");
-        flag=false;
+        flag = false;
         number_one = 0;
         number_two = 0;
         operation_string = operator.NULL.name();
@@ -346,12 +323,9 @@ public class MainActivity extends AppCompatActivity {
 
     //    handle backspace click (the ImageButton) in the layout
     public void onBackspaceClick(View view) {
-        view.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                clearAll();
-                return false;
-            }
+        view.setOnLongClickListener(v -> {
+            clearAll();
+            return false;
         });
         if (!binding.inputValue2.getText().toString().equals("")) {
             backspaceImplementation(binding.inputValue2);
@@ -367,10 +341,78 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void backspaceImplementation(TextView view) {
+    private void backspaceImplementation(@NonNull TextView view) {
         String backspace = view.getText().toString();
         backspace = backspace.substring(0, backspace.length() - 1);
         view.setText(backspace);
+    }
+
+    private enum operator {
+        ADD, SUB, MUL, DIV, MOD, ROOT, POW, FACT, SIN, COS, TAN, NULL
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public class NumClick extends MainActivity implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            try {
+                if (!binding.textViewResult.getText().toString().equals("")) {
+                    onClearClick(view);
+                }
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
+            switch (view.getId()) {
+                case R.id.button_one:
+                    selectTextViewToAppend("1");
+                    break;
+                case R.id.button_two:
+                    selectTextViewToAppend("2");
+                    break;
+                case R.id.button_three:
+                    selectTextViewToAppend("3");
+                    break;
+                case R.id.button_four:
+                    selectTextViewToAppend("4");
+                    break;
+                case R.id.button_five:
+                    selectTextViewToAppend("5");
+                    break;
+                case R.id.button_six:
+                    selectTextViewToAppend("6");
+                    break;
+                case R.id.button_seven:
+                    selectTextViewToAppend("7");
+                    break;
+                case R.id.button_eight:
+                    selectTextViewToAppend("8");
+                    break;
+                case R.id.button_nine:
+                    selectTextViewToAppend("9");
+                    break;
+                case R.id.button_zero:
+                    selectTextViewToAppend("0");
+                    break;
+                case R.id.button_dot:
+                    if (operation_string.equals(operator.NULL.name())) {
+                        if (binding.inputValue1.getText().toString().contains(".")) {
+                            Toast.makeText(this, "Cannot have more than one decimal point in a number", Toast.LENGTH_LONG).show();
+                        } else {
+                            binding.inputValue1.append(".");
+                        }
+                    } else {
+                        if (binding.inputValue2.getText().toString().contains(".")) {
+                            Toast.makeText(this, "Cannot have more than one decimal point in a number", Toast.LENGTH_LONG).show();
+                        } else {
+                            binding.inputValue2.append(".");
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
 }
