@@ -14,7 +14,7 @@ A separate java class is used for the calculation implementation. SavedInstanceS
 
 When the backspace button is long pressed, all the contents are cleared. Methods are created and reused to reduce code duplication. Compatibility classes are used to provide backwards compatibility for older android versions.
 
-![App Logo]()
+![App Logo](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/icon_cal.png)
 
 This icon represents the application. Made using Font Awesome Icons and MDBootstrap. It follows material design guidelines.
 
@@ -25,10 +25,13 @@ Minimum Android SDK: 19
 Target Android SDK: 28
 
 # Screenshots
-![Main UI]()
+*In Portrait Mode-
+![Main UI](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Portait.jpg)
+*In Landsacpe Mode-
+![Main UI](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Landscape.jpg)
 
-![Calculation being performed 1](
-![Calculation being performed 2]()
+![Calculation being performed 1](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Calculation-1.jpg)
+![Calculation being performed 2](https://github.com/Cody-dev-debug/Calculator/blob/main/Images/Calculation-2.jpg)
 
 
 # Usage
