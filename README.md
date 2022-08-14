@@ -19,10 +19,10 @@ When the backspace button is long pressed, all the contents are cleared. Methods
 This icon represents the application. Made using Font Awesome Icons and MDBootstrap. It follows material design guidelines.
 
 # Android Specifications
-* Android Studio Version: 3.1.4
-* Gradle Version: 4.6
+* Android Studio Version: 2021.2.1
+* Gradle Version: 6.5
 * Minimum Android SDK: 19
-* Target Android SDK: 28
+* Target Android SDK: 33
 
 # Screenshots
 * In Portrait Mode-

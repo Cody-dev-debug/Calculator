@@ -272,7 +272,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorPrimaryDark"
-                android:onClick="onEqualsClick"
                 android:text="@string/button_equals"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/white" />
