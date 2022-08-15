@@ -7,15 +7,15 @@
 7    <uses-sdk
 8        android:minSdkVersion="19"
 8-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml
-9        android:targetSdkVersion="33" />
+9        android:targetSdkVersion="31" />
 9-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml
 10
 11    <application
-11-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:5:5-20:19
+11-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:5:5-21:19
 12        android:allowBackup="true"
 12-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/9754c052f0558b8f3e575e1b1d644b1f/core-1.7.0/AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.7.0] /home/aditya/.gradle/caches/transforms-3/107b48ead489d4dd0a48badb09d9592d/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher_cal"
 15-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:7:9-47
@@ -29,44 +29,46 @@
 20        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
 20-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:11:9-68
 21        <activity
-21-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:12:9-19:20
+21-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:12:9-20:20
 22            android:name="bansal.aditya.calculator.MainActivity"
 22-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:12:19-71
-23            android:launchMode="singleTop" >
-23-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:13:13-43
-24            <intent-filter>
-24-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:14:13-18:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:15:17-69
-25-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:15:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:17:17-77
-27-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:17:27-74
-28            </intent-filter>
-29        </activity>
-30
-31        <provider
-31-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-32            android:name="androidx.startup.InitializationProvider"
-32-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-33            android:authorities="bansal.aditya.calculator.androidx-startup"
-33-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-34            android:exported="false" >
-34-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-35            <meta-data
-35-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-36                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-36-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-37                android:value="androidx.startup" />
-37-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/873fae0beeff47808d46bd64157b4d70/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-38            <meta-data
-38-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/336367916adc8311afb7ae7d42fe4bb0/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-39                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-39-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/336367916adc8311afb7ae7d42fe4bb0/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-40                android:value="androidx.startup" />
-40-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/aditya/.gradle/caches/transforms-2/files-2.1/336367916adc8311afb7ae7d42fe4bb0/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-41        </provider>
-42    </application>
-43
-44</manifest>
+23            android:exported="true"
+23-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:14:13-36
+24            android:launchMode="singleTop" >
+24-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:13:13-43
+25            <intent-filter>
+25-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:15:13-19:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:16:17-69
+26-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:16:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:18:17-77
+28-->/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/src/main/AndroidManifest.xml:18:27-74
+29            </intent-filter>
+30        </activity>
+31
+32        <provider
+32-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+33            android:name="androidx.startup.InitializationProvider"
+33-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+34            android:authorities="bansal.aditya.calculator.androidx-startup"
+34-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+35            android:exported="false" >
+35-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+36            <meta-data
+36-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+37                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+37-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+38                android:value="androidx.startup" />
+38-->[androidx.emoji2:emoji2:1.0.0] /home/aditya/.gradle/caches/transforms-3/a6574320c86c3a37e884ef017c5b1904/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+39            <meta-data
+39-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/aditya/.gradle/caches/transforms-3/d2a3b14342a552ef8281dc10a1999877/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+40                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+40-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/aditya/.gradle/caches/transforms-3/d2a3b14342a552ef8281dc10a1999877/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+41                android:value="androidx.startup" />
+41-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/aditya/.gradle/caches/transforms-3/d2a3b14342a552ef8281dc10a1999877/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+42        </provider>
+43    </application>
+44
+45</manifest>

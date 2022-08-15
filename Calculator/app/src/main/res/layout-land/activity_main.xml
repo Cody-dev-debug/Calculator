@@ -28,7 +28,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -38,7 +38,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -48,7 +48,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -58,7 +58,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_minus"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -68,7 +68,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_plus"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -78,7 +78,7 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_sin"
                 android:textAppearance="@style/operator_button_styles" />
         </TableRow>
@@ -93,7 +93,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -103,7 +102,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -113,7 +111,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -123,7 +120,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_mul"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -133,16 +129,16 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
+
                 android:text="@string/button_root"
                 android:textAppearance="@style/operator_button_styles" />
+
             <Button
                 android:id="@+id/button_cos"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_cos"
                 android:textAppearance="@style/operator_button_styles" />
         </TableRow>
@@ -157,7 +153,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -167,7 +162,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -177,7 +171,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -187,7 +180,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_div"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -197,16 +189,15 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_pow"
                 android:textAppearance="@style/operator_button_styles" />
+
             <Button
                 android:id="@+id/button_tan"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_tan"
                 android:textAppearance="@style/operator_button_styles" />
         </TableRow>
@@ -221,9 +212,10 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_dot"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
 
             <Button
                 android:id="@+id/button_zero"
@@ -231,7 +223,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -241,7 +232,6 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                android:onClick="onClearClick"
                 android:text="@string/button_clear"
                 android:textAppearance="@style/clear_button_styles"
                 android:textColor="#B81414" />
@@ -253,16 +243,15 @@
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_mod"
                 android:textAppearance="@style/operator_button_styles" />
+
             <Button
                 android:id="@+id/button_factorial"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="@dimen/box_size_land"
                 android:layout_height="@dimen/box_size_land"
                 android:background="@color/colorAccent"
-                
                 android:text="@string/button_factorial"
                 android:textAppearance="@style/operator_button_styles" />
 
@@ -281,9 +270,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:gravity="end"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
@@ -294,8 +283,8 @@
             android:id="@+id/input_value_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:baselineAligned="false"
             android:ellipsize="end"
             android:maxLength="12"
@@ -310,8 +299,8 @@
             android:id="@+id/input_operation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:baselineAligned="false"
             android:ellipsize="end"
             android:maxLength="4"
@@ -328,8 +317,8 @@
             android:id="@+id/input_value_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:baselineAligned="false"
             android:ellipsize="end"
             android:gravity="end"
@@ -370,7 +359,6 @@
         android:layout_marginBottom="12dp"
         android:layout_weight="1"
         android:contentDescription="@string/backspace"
-        android:onClick="onBackspaceClick"
         android:src="@drawable/ic_backspace_black_24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
@@ -380,9 +368,9 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:gravity="end"
         android:orientation="vertical"
@@ -394,8 +382,8 @@
             android:id="@+id/textView_result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:gravity="end"
             android:maxLines="1"
             android:textAlignment="viewEnd"
@@ -408,8 +396,8 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="end"
 
         android:orientation="vertical"
@@ -421,8 +409,8 @@
             android:id="@+id/complete_operation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:gravity="end"
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"

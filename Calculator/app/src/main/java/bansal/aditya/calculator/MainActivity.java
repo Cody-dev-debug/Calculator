@@ -2,6 +2,7 @@ package bansal.aditya.calculator;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.OrientationEventListener;
@@ -28,11 +29,11 @@ import bansal.aditya.calculator.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Testing";
     private static int MAX_CHARACTERS = 10;
+    private static String operation_string; // current operation
     ActivityMainBinding binding;
     private Calculator mCalculator; // object of Calculator class
     private double number_one = 1; // first number
     private double number_two = 1; // second number
-    private static String operation_string; // current operation
     private boolean flag = false;
 
     @Override
@@ -54,44 +55,52 @@ public class MainActivity extends AppCompatActivity {
             number_one = savedInstanceState.getDouble("Number_one", 0);
             number_two = savedInstanceState.getDouble("Number_two", 0);
         }
-        binding.buttonOne.setOnClickListener(new NumClick(binding,this));
-        binding.buttonTwo.setOnClickListener(new NumClick(binding,this));
-        binding.buttonThree.setOnClickListener(new NumClick(binding,this));
-        binding.buttonFour.setOnClickListener(new NumClick(binding,this));
-        binding.buttonFive.setOnClickListener(new NumClick(binding,this));
-        binding.buttonSix.setOnClickListener(new NumClick(binding,this));
-        binding.buttonSeven.setOnClickListener(new NumClick(binding,this));
-        binding.buttonEight.setOnClickListener(new NumClick(binding,this));
-        binding.buttonNine.setOnClickListener(new NumClick(binding,this));
-        binding.buttonDot.setOnClickListener(new NumClick(binding,this));
-        binding.buttonZero.setOnClickListener(new NumClick(binding,this));
-        binding.buttonPlus.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonMinus.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonDivide.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonMultiply.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonMod.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonRoot.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonPow.setOnClickListener(new OperatorClick(binding,this));
-        binding.buttonEquals.setOnClickListener(new EqualsClick(binding,this));
+        binding.buttonOne.setOnClickListener(new NumClick(binding, this));
+        binding.buttonTwo.setOnClickListener(new NumClick(binding, this));
+        binding.buttonThree.setOnClickListener(new NumClick(binding, this));
+        binding.buttonFour.setOnClickListener(new NumClick(binding, this));
+        binding.buttonFive.setOnClickListener(new NumClick(binding, this));
+        binding.buttonSix.setOnClickListener(new NumClick(binding, this));
+        binding.buttonSeven.setOnClickListener(new NumClick(binding, this));
+        binding.buttonEight.setOnClickListener(new NumClick(binding, this));
+        binding.buttonNine.setOnClickListener(new NumClick(binding, this));
+        binding.buttonDot.setOnClickListener(new NumClick(binding, this));
+        binding.buttonZero.setOnClickListener(new NumClick(binding, this));
+        binding.buttonPlus.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonMinus.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonDivide.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonMultiply.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonMod.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonRoot.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonPow.setOnClickListener(new OperatorClick(binding, this));
+        binding.buttonEquals.setOnClickListener(new EqualsClick(binding, this));
+        binding.buttonClear.setOnClickListener(this::onClearClick);
+        binding.buttonBackspace.setOnClickListener(this::onBackspaceClick);
         OrientationEventListener mOrientationListener = new OrientationEventListener(this) {
+            private static final int THRESHOLD = 15;
+
             @Override
             public void onOrientationChanged(int i) {
-                if (binding.buttonFactorial != null) {
-                    binding.buttonFactorial.setOnClickListener(new OperatorClick(binding,getApplicationContext()));
+                if ((i >= (90 - THRESHOLD) && i <= (90 + THRESHOLD)) || (i >= (270 - THRESHOLD) && i <= (270 + THRESHOLD))) {
+                    if (binding.buttonFactorial != null) {
+                        binding.buttonFactorial.setOnClickListener(new OperatorClick(binding, getApplicationContext()));
+                    }
+                    if (binding.buttonSin != null) {
+                        binding.buttonSin.setOnClickListener(new OperatorClick(binding, getApplicationContext()));
+                    }
+                    if (binding.buttonCos != null) {
+                        binding.buttonCos.setOnClickListener(new OperatorClick(binding, getApplicationContext()));
+                    }
+                    if (binding.buttonTan != null) {
+                        binding.buttonTan.setOnClickListener(new OperatorClick(binding, getApplicationContext()));
+                    }
                 }
-                if (binding.buttonSin != null) {
-                    binding.buttonSin.setOnClickListener(new OperatorClick(binding,getApplicationContext()));
-                }
-                if (binding.buttonCos != null) {
-                    binding.buttonCos.setOnClickListener(new OperatorClick(binding,getApplicationContext()));
-                }
-                if (binding.buttonTan != null) {
-                    binding.buttonTan.setOnClickListener(new OperatorClick(binding,getApplicationContext()));
-                }
+                if(i==-1)
+                    Toast.makeText(MainActivity.this, "Please keep the device vertical", Toast.LENGTH_SHORT).show();
             }
         };
-        if(mOrientationListener.canDetectOrientation()){
-            Log.d(TAG,"Orientation detected");
+        if (mOrientationListener.canDetectOrientation()) {
+//            Log.d(TAG, "Orientation detected");
             mOrientationListener.enable();
         }
 
@@ -126,27 +135,82 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cannot have more than 10 numbers", Toast.LENGTH_LONG).show();
             }
         } else {
-            if (binding.inputValue1.getText().toString().contains(".")) {
-                MAX_CHARACTERS++;
-            }
-            if (binding.inputValue2.getText().length() < MAX_CHARACTERS) {
-                binding.inputValue2.append(number);
-                MAX_CHARACTERS = 10;
+            if (!binding.inputOperation.getText().toString().equals("!")) {
+                if (binding.inputValue1.getText().toString().contains(".")) {
+                    MAX_CHARACTERS++;
+                }
+                if (binding.inputValue2.getText().length() < MAX_CHARACTERS) {
+                    binding.inputValue2.append(number);
+                    MAX_CHARACTERS = 10;
+                } else {
+                    MAX_CHARACTERS = 10;
+                    Toast.makeText(this, "Cannot have more than 10 numbers", Toast.LENGTH_LONG).show();
+                }
             } else {
-                MAX_CHARACTERS = 10;
-                Toast.makeText(this, "Cannot have more than 10 numbers", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Factorial is a unary operator", Toast.LENGTH_LONG).show();
             }
 
         }
+    }
+
+    //    handle clear click
+    public void onClearClick(View view) {
+        clearAll();
+        binding.textViewResult.setText("");
+        binding.completeOperation.setText("");
+    }
+
+    //    clearing most values (needed many times, so created a method to reduce code duplication
+    public void clearAll() {
+        binding.inputValue1.setText("");
+        binding.inputOperation.setText("");
+        binding.inputValue2.setText("");
+        binding.inputOperation1.setText("");
+        flag = false;
+        number_one = 0;
+        number_two = 0;
+        operation_string = operator.NULL.name();
+//        Log.d(TAG, operation_string);
+
+    }
+
+    //    handle backspace click (the ImageButton) in the layout
+    public void onBackspaceClick(View view) {
+        view.setOnLongClickListener(v -> {
+            clearAll();
+            return false;
+        });
+        if (!binding.inputValue2.getText().toString().equals("")) {
+            backspaceImplementation(binding.inputValue2);
+        } else {
+            if (!binding.inputOperation.getText().toString().equals("")) {
+                binding.inputOperation.setText("");
+                binding.inputOperation1.setText("");
+            } else {
+                if (!binding.inputValue1.getText().toString().equals("")) {
+                    backspaceImplementation(binding.inputValue1);
+                }
+            }
+        }
+    }
+
+    private void backspaceImplementation(@NonNull TextView view) {
+        String backspace = view.getText().toString();
+        backspace = backspace.substring(0, backspace.length() - 1);
+        view.setText(backspace);
+    }
+
+    private enum operator {
+        ADD, SUB, MUL, DIV, MOD, ROOT, POW, FACT, SIN, COS, TAN, NULL
     }
 
     public class EqualsClick extends MainActivity implements View.OnClickListener {
 
         private final Context context;
 
-        public EqualsClick(ActivityMainBinding b, Context context){
-            this.context= context;
-            binding=b;
+        public EqualsClick(ActivityMainBinding b, Context context) {
+            this.context = context;
+            binding = b;
         }
 
         @Override
@@ -235,120 +299,68 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //    handle clear click
-    public void onClearClick(View view) {
-        clearAll();
-        binding.textViewResult.setText("");
-        binding.completeOperation.setText("");
-    }
-
-
-    //    clearing most values (needed many times, so created a method to reduce code duplication
-    public void clearAll() {
-        binding.inputValue1.setText("");
-        binding.inputOperation.setText("");
-        binding.inputValue2.setText("");
-        binding.inputOperation1.setText("");
-        flag = false;
-        number_one = 0;
-        number_two = 0;
-        operation_string = operator.NULL.name();
-        Log.d(TAG, operation_string);
-
-    }
-
-    //    handle backspace click (the ImageButton) in the layout
-    public void onBackspaceClick(View view) {
-        view.setOnLongClickListener(v -> {
-            clearAll();
-            return false;
-        });
-        if (!binding.inputValue2.getText().toString().equals("")) {
-            backspaceImplementation(binding.inputValue2);
-        } else {
-            if (!binding.inputOperation.getText().toString().equals("")) {
-                binding.inputOperation.setText("");
-                binding.inputOperation1.setText("");
-            } else {
-                if (!binding.inputValue1.getText().toString().equals("")) {
-                    backspaceImplementation(binding.inputValue1);
-                }
-            }
-        }
-    }
-
-    private void backspaceImplementation(@NonNull TextView view) {
-        String backspace = view.getText().toString();
-        backspace = backspace.substring(0, backspace.length() - 1);
-        view.setText(backspace);
-    }
-
-    private enum operator {
-        ADD, SUB, MUL, DIV, MOD, ROOT, POW, FACT, SIN, COS, TAN, NULL
-    }
-
     //            handle operations for operators
     public class OperatorClick extends MainActivity implements View.OnClickListener {
 
         private final Context context;
 
         public OperatorClick(ActivityMainBinding b, Context context) {
-            this.context= context;
+            this.context = context;
             binding = b;
         }
 
         @Override
         @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
         public void onClick(View view) {
+            binding.inputOperation1.setText("");
+            binding.inputOperation.setText("");
             if (!binding.textViewResult.getText().toString().equals(""))
                 onClearClick(view);
 
             if (!binding.inputValue1.getText().toString().equals("")) {
-                if (binding.inputOperation.getText().toString().equals("sin("))
-                    binding.inputOperation1.setText("");
 
                 switch (view.getId()) {
                     case R.id.button_plus:
                         operation_string = operator.ADD.name();
                         binding.inputOperation.setText("+");
                         flag = false;
-                        break;
+                        return;
                     case R.id.button_minus:
                         operation_string = operator.SUB.name();
                         binding.inputOperation.setText("-");
                         flag = false;
-                        break;
+                        return;
                     case R.id.button_multiply:
                         operation_string = operator.MUL.name();
                         binding.inputOperation.setText("x");
                         flag = false;
-                        break;
+                        return;
                     case R.id.button_divide:
                         operation_string = operator.DIV.name();
                         binding.inputOperation.setText("/");
                         flag = false;
-                        break;
+                        return;
                     case R.id.button_mod:
                         operation_string = operator.MOD.name();
                         binding.inputOperation.setText("%");
                         flag = false;
-                        break;
+                        return;
                     case R.id.button_pow:
                         operation_string = operator.POW.name();
                         binding.inputOperation.setText("^");
                         flag = false;
-                        break;
+                        return;
                     case R.id.button_factorial:
                         operation_string = operator.FACT.name();
                         binding.inputOperation.setText("!");
                         flag = true;
-                        break;
+                        return;
                     default:
                         operation_string = operator.NULL.name();
                         break;
                 }
-                return;
             }
+            Log.d(TAG, String.valueOf(view));
             switch (view.getId()) {
                 case R.id.button_root:
                     operation_string = operator.ROOT.name();
@@ -386,20 +398,21 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public class NumClick extends MainActivity implements View.OnClickListener {
         private final Context context;
-        public NumClick(ActivityMainBinding b,Context context) {
+
+        public NumClick(ActivityMainBinding b, Context context) {
             this.context = context;
             binding = b;
         }
-        
+
         @Override
         public void onClick(View view) {
             if (!binding.textViewResult.getText().toString().equals(""))
                 onClearClick(view);
             switch (view.getId()) {
                 case R.id.button_one:
-                    Log.d(TAG,"In Button One");
+                    Log.d(TAG, "In Button One");
                     selectTextViewToAppend("1");
-                    Log.d(TAG,"In Button One");
+                    Log.d(TAG, "In Button One");
                     break;
                 case R.id.button_two:
                     selectTextViewToAppend("2");
@@ -445,9 +458,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 default:
                     break;
-                }
             }
         }
     }
+}
 
 

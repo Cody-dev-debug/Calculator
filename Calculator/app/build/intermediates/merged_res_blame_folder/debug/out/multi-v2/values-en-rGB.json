@@ -4,7 +4,7 @@
             "outputFile": "/home/aditya/AndroidStudioProjects/Calculator/Calculator/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/home/aditya/.gradle/caches/transforms-2/files-2.1/9754c052f0558b8f3e575e1b1d644b1f/core-1.7.0/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/home/aditya/.gradle/caches/transforms-3/107b48ead489d4dd0a48badb09d9592d/transformed/core-1.7.0/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/aditya/.gradle/caches/transforms-2/files-2.1/8c4978a6deb3a2f0eb7b66c430698c90/appcompat-1.4.2/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/home/aditya/.gradle/caches/transforms-3/ae227914fedd03b5cbe7aec7e6e688fa/transformed/appcompat-1.4.2/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

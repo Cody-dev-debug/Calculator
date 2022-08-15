@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import bansal.aditya.calculator.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -251,187 +252,187 @@ public final class ActivityMainBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.button_backspace;
-      ImageButton buttonBackspace = rootView.findViewById(id);
+      ImageButton buttonBackspace = ViewBindings.findChildViewById(rootView, id);
       if (buttonBackspace == null) {
         break missingId;
       }
 
       id = R.id.button_clear;
-      Button buttonClear = rootView.findViewById(id);
+      Button buttonClear = ViewBindings.findChildViewById(rootView, id);
       if (buttonClear == null) {
         break missingId;
       }
 
       id = R.id.button_cos;
-      Button buttonCos = rootView.findViewById(id);
+      Button buttonCos = ViewBindings.findChildViewById(rootView, id);
 
       id = R.id.button_divide;
-      Button buttonDivide = rootView.findViewById(id);
+      Button buttonDivide = ViewBindings.findChildViewById(rootView, id);
       if (buttonDivide == null) {
         break missingId;
       }
 
       id = R.id.button_dot;
-      Button buttonDot = rootView.findViewById(id);
+      Button buttonDot = ViewBindings.findChildViewById(rootView, id);
       if (buttonDot == null) {
         break missingId;
       }
 
       id = R.id.button_eight;
-      Button buttonEight = rootView.findViewById(id);
+      Button buttonEight = ViewBindings.findChildViewById(rootView, id);
       if (buttonEight == null) {
         break missingId;
       }
 
       id = R.id.button_equals;
-      Button buttonEquals = rootView.findViewById(id);
+      Button buttonEquals = ViewBindings.findChildViewById(rootView, id);
       if (buttonEquals == null) {
         break missingId;
       }
 
       id = R.id.button_factorial;
-      Button buttonFactorial = rootView.findViewById(id);
+      Button buttonFactorial = ViewBindings.findChildViewById(rootView, id);
 
       id = R.id.button_five;
-      Button buttonFive = rootView.findViewById(id);
+      Button buttonFive = ViewBindings.findChildViewById(rootView, id);
       if (buttonFive == null) {
         break missingId;
       }
 
       id = R.id.button_four;
-      Button buttonFour = rootView.findViewById(id);
+      Button buttonFour = ViewBindings.findChildViewById(rootView, id);
       if (buttonFour == null) {
         break missingId;
       }
 
       id = R.id.button_minus;
-      Button buttonMinus = rootView.findViewById(id);
+      Button buttonMinus = ViewBindings.findChildViewById(rootView, id);
       if (buttonMinus == null) {
         break missingId;
       }
 
       id = R.id.button_mod;
-      Button buttonMod = rootView.findViewById(id);
+      Button buttonMod = ViewBindings.findChildViewById(rootView, id);
       if (buttonMod == null) {
         break missingId;
       }
 
       id = R.id.button_multiply;
-      Button buttonMultiply = rootView.findViewById(id);
+      Button buttonMultiply = ViewBindings.findChildViewById(rootView, id);
       if (buttonMultiply == null) {
         break missingId;
       }
 
       id = R.id.button_nine;
-      Button buttonNine = rootView.findViewById(id);
+      Button buttonNine = ViewBindings.findChildViewById(rootView, id);
       if (buttonNine == null) {
         break missingId;
       }
 
       id = R.id.button_one;
-      Button buttonOne = rootView.findViewById(id);
+      Button buttonOne = ViewBindings.findChildViewById(rootView, id);
       if (buttonOne == null) {
         break missingId;
       }
 
       id = R.id.button_plus;
-      Button buttonPlus = rootView.findViewById(id);
+      Button buttonPlus = ViewBindings.findChildViewById(rootView, id);
       if (buttonPlus == null) {
         break missingId;
       }
 
       id = R.id.button_pow;
-      Button buttonPow = rootView.findViewById(id);
+      Button buttonPow = ViewBindings.findChildViewById(rootView, id);
       if (buttonPow == null) {
         break missingId;
       }
 
       id = R.id.button_root;
-      Button buttonRoot = rootView.findViewById(id);
+      Button buttonRoot = ViewBindings.findChildViewById(rootView, id);
       if (buttonRoot == null) {
         break missingId;
       }
 
       id = R.id.button_seven;
-      Button buttonSeven = rootView.findViewById(id);
+      Button buttonSeven = ViewBindings.findChildViewById(rootView, id);
       if (buttonSeven == null) {
         break missingId;
       }
 
       id = R.id.button_sin;
-      Button buttonSin = rootView.findViewById(id);
+      Button buttonSin = ViewBindings.findChildViewById(rootView, id);
 
       id = R.id.button_six;
-      Button buttonSix = rootView.findViewById(id);
+      Button buttonSix = ViewBindings.findChildViewById(rootView, id);
       if (buttonSix == null) {
         break missingId;
       }
 
       id = R.id.button_tan;
-      Button buttonTan = rootView.findViewById(id);
+      Button buttonTan = ViewBindings.findChildViewById(rootView, id);
 
       id = R.id.button_three;
-      Button buttonThree = rootView.findViewById(id);
+      Button buttonThree = ViewBindings.findChildViewById(rootView, id);
       if (buttonThree == null) {
         break missingId;
       }
 
       id = R.id.button_two;
-      Button buttonTwo = rootView.findViewById(id);
+      Button buttonTwo = ViewBindings.findChildViewById(rootView, id);
       if (buttonTwo == null) {
         break missingId;
       }
 
       id = R.id.button_zero;
-      Button buttonZero = rootView.findViewById(id);
+      Button buttonZero = ViewBindings.findChildViewById(rootView, id);
       if (buttonZero == null) {
         break missingId;
       }
 
       id = R.id.complete_operation;
-      TextView completeOperation = rootView.findViewById(id);
+      TextView completeOperation = ViewBindings.findChildViewById(rootView, id);
       if (completeOperation == null) {
         break missingId;
       }
 
       id = R.id.input_operation;
-      TextView inputOperation = rootView.findViewById(id);
+      TextView inputOperation = ViewBindings.findChildViewById(rootView, id);
       if (inputOperation == null) {
         break missingId;
       }
 
       id = R.id.input_operation1;
-      TextView inputOperation1 = rootView.findViewById(id);
+      TextView inputOperation1 = ViewBindings.findChildViewById(rootView, id);
       if (inputOperation1 == null) {
         break missingId;
       }
 
       id = R.id.input_value_1;
-      TextView inputValue1 = rootView.findViewById(id);
+      TextView inputValue1 = ViewBindings.findChildViewById(rootView, id);
       if (inputValue1 == null) {
         break missingId;
       }
 
       id = R.id.input_value_2;
-      TextView inputValue2 = rootView.findViewById(id);
+      TextView inputValue2 = ViewBindings.findChildViewById(rootView, id);
       if (inputValue2 == null) {
         break missingId;
       }
 
       id = R.id.linearLayout;
-      LinearLayout linearLayout = rootView.findViewById(id);
+      LinearLayout linearLayout = ViewBindings.findChildViewById(rootView, id);
       if (linearLayout == null) {
         break missingId;
       }
 
       id = R.id.tableLayout;
-      TableLayout tableLayout = rootView.findViewById(id);
+      TableLayout tableLayout = ViewBindings.findChildViewById(rootView, id);
       if (tableLayout == null) {
         break missingId;
       }
 
       id = R.id.textView_result;
-      TextView textViewResult = rootView.findViewById(id);
+      TextView textViewResult = ViewBindings.findChildViewById(rootView, id);
       if (textViewResult == null) {
         break missingId;
       }
